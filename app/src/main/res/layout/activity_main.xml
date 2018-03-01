@@ -80,4 +80,18 @@
         app:layout_constraintTop_toBottomOf="@+id/jump_2_book_provider_activity"
         app:layout_constraintVertical_bias="0.303"/>
 
+    <Button
+        android:id="@+id/jump_2_bind_pool_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="BindPoolActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jump_2_tcp_client_activity"/>
+
 </android.support.constraint.ConstraintLayout>

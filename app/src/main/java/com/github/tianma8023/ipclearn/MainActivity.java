@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.github.tianma8023.ipclearn.aidl.BookManagerActivity;
+import com.github.tianma8023.ipclearn.bindpool.BindPoolClientActivity;
 import com.github.tianma8023.ipclearn.messenger.MessengerClientActivity;
 import com.github.tianma8023.ipclearn.provider.BookProviderActivity;
 import com.github.tianma8023.ipclearn.socket.TCPClientActivity;
@@ -49,5 +50,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.jump_2_tcp_client_activity)
     public void jump2TCPClientActivity() {
         startActivity(new Intent(this, TCPClientActivity.class));
+    }
+
+    @OnClick(R.id.jump_2_bind_pool_activity)
+    public void jump2BindPoolActivity() {
+        startActivity(new Intent(this, BindPoolClientActivity.class));
     }
 }

@@ -13,7 +13,6 @@
     <!-- permission 声明 -->
     <uses-permission android:name="com.github.tianma8023.ipclearn.permission.ACCESS_BOOK_SERVICE"/>
     <uses-permission android:name="com.github.tianma8023.ipclearn.permission.BOOK_PROVIDER"/>
-
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
@@ -85,7 +84,21 @@
             android:process=":socket">
         </service>
 
-        <activity android:name=".socket.TCPClientActivity">
+        <activity
+            android:name=".socket.TCPClientActivity"
+            android:label="TCPClientActivity">
+        </activity>
+
+        <service
+            android:name=".bindpool.BindPoolService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+        </service>
+
+        <activity
+            android:name=".bindpool.BindPoolClientActivity"
+            android:label="BindPoolClientActivity">
         </activity>
     </application>
 
