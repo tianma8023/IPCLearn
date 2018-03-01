@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.github.tianma8023.ipclearn">
+
+    <!-- permission 定义 -->
+    <permission
+        android:name="com.github.tianma8023.ipclearn.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal"/>
+    <permission
+        android:name="com.github.tianma8023.ipclearn.permission.BOOK_PROVIDER"
+        android:protectionLevel="normal"/>
+
+    <!-- permission 声明 -->
+    <uses-permission android:name="com.github.tianma8023.ipclearn.permission.ACCESS_BOOK_SERVICE"/>
+    <uses-permission android:name="com.github.tianma8023.ipclearn.permission.BOOK_PROVIDER"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="SecondActivity"
+            android:process=":remote">
+        </activity>
+        <activity
+            android:name=".ThirdActivity"
+            android:label="ThirdActivity"
+            android:process="com.github.tianma8023.ipclearn.remote">
+        </activity>
+
+        <service
+            android:name=".messenger.MessengerServerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+        </service>
+
+        <activity
+            android:name=".messenger.MessengerClientActivity"
+            android:label="MessengerClientActivity">
+        </activity>
+
+        <service
+            android:name=".aidl.BookManagerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+        </service>
+
+        <activity android:name=".aidl.BookManagerActivity">
+        </activity>
+
+        <provider
+            android:name=".provider.BookProvider"
+            android:authorities="com.github.tianma8023.ipclearn.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.github.tianma8023.ipclearn.permission.BOOK_PROVIDER"
+            android:process=":provider">
+        </provider>
+
+        <activity
+            android:name=".provider.BookProviderActivity"
+            android:label="BookProviderActivity">
+        </activity>
+    </application>
+
+</manifest>
