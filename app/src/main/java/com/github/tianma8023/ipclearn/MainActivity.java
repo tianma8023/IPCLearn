@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.github.tianma8023.ipclearn.aidl.BookManagerActivity;
 import com.github.tianma8023.ipclearn.messenger.MessengerClientActivity;
 import com.github.tianma8023.ipclearn.provider.BookProviderActivity;
+import com.github.tianma8023.ipclearn.socket.TCPClientActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,5 +44,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.jump_2_book_provider_activity)
     public void jump2BookProviderActivity() {
         startActivity(new Intent(this, BookProviderActivity.class));
+    }
+
+    @OnClick(R.id.jump_2_tcp_client_activity)
+    public void jump2TCPClientActivity() {
+        startActivity(new Intent(this, TCPClientActivity.class));
     }
 }
