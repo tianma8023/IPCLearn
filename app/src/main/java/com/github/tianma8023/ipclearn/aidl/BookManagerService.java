@@ -104,7 +104,7 @@ public class BookManagerService extends Service {
 
     @Override
     public void onDestroy() {
-        mIsServiceDestroyed.set(false);
+        mIsServiceDestroyed.set(true);
         super.onDestroy();
     }
 
@@ -129,7 +129,7 @@ public class BookManagerService extends Service {
 
         @Override
         public void run() {
-            // 每5s在后台生成一本新的数
+            // 每5s在后台生成一本新书
             while(!mIsServiceDestroyed.get()){
                 try {
                     TimeUnit.SECONDS.sleep(5);
